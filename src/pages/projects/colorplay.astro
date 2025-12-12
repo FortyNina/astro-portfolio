@@ -1,0 +1,16 @@
+---
+import "../../styles/global.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const pageTitle = "Nina Demirjian - Color Play";
+
+import { Image } from "astro:assets";
+import colorplay_00 from "../../assets/colorplay/colorplay_00.png";
+---
+
+<html lang="en">
+    <BaseLayout pageTitle={pageTitle}>
+        <Image src={colorplay_00} alt="Color Play 0" class="project-header-image" />
+
+        
+    </BaseLayout>
+</html>

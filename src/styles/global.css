@@ -2,6 +2,7 @@ html {
   background-color: #000000;
   font-family: sans-serif;
   height: 100%;
+  scrollbar-gutter: stable;
 
 }
 
@@ -22,7 +23,7 @@ body {
 
 /* Put nav in top-left corner */
 header nav {
-  position: absolute;
+  position: fixed;
   top: 15px;
   left: 15px;
   line-height: .75rem;
@@ -31,7 +32,7 @@ header nav {
 
 /* Put nav in top-left corner */
 .bio {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 15px;
   width: 30%;
@@ -53,6 +54,9 @@ h1 {
   padding-top: 0%;
   margin-top: 0%;
   color: white;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 p {
@@ -106,4 +110,12 @@ p {
 .nav-links a:hover,
 .nav-links a:focus {
   text-decoration: underline;
+}
+
+.project-header-image{
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 5%;
 }

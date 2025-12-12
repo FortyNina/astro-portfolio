@@ -1,0 +1,24 @@
+---
+const { project, year, client } = Astro.props;
+---
+
+<div class="project-title">
+  <span>{project}</span>
+  <span>{year}</span>
+  <span>{client}</span>
+</div>
+
+<style>
+  .project-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* spreads the three items nicely */
+    align-items: center;
+    width: 100%;
+    gap: 1rem; /* optional */
+  }
+
+  .project-title span {
+    font-size: 1.25rem; /* optional */
+  }
+</style>
