@@ -7,18 +7,30 @@ html {
 }
 
 body {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  padding: 5;
+  margin: 0;
+  padding: 5px;
   line-height: 1.5;
-  background-image: url('/public/MainBackground.png');
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url('/MainBackground.png');
   background-size: cover;
   background-position: center;
-    background-color: rgba(0,0,0,0.85);
-  background-blend-mode:darken;
-    border: 8px solid black;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* background stays fixed */
+  background-color: rgba(0, 0, 0, 0.85);
+  background-blend-mode: darken;
+}
 
+/* fixed border around viewport */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  border: 8px solid black;
+  pointer-events: none; /* allow interacting with content */
+  box-sizing: border-box;
+  z-index: 9999; /* ensures it's above everything */
 }
 
 /* Put nav in top-left corner */
@@ -38,7 +50,7 @@ header nav {
   width: 30%;
   text-align: right;
   line-height: 1rem;
-    font-size: 1rem;
+  font-size: 1rem;
 
 }
 
@@ -112,10 +124,21 @@ p {
   text-decoration: underline;
 }
 
-.project-header-image{
+.project-header-image {
   width: 100vw;
   max-width: 100%;
   height: auto;
   display: block;
   margin-top: 5%;
 }
+
+.project-body{
+  color: white;
+  font-weight: 150;
+  font-size: 1.2rem;
+  margin-left: 15px;
+  padding-top: 30px;
+  line-height: 25px;
+
+}
+

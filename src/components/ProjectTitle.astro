@@ -1,24 +1,46 @@
 ---
-const { project, year, client } = Astro.props;
+const { projectName, year, client } = Astro.props;
 ---
 
 <div class="project-title">
-  <span>{project}</span>
-  <span>{year}</span>
-  <span>{client}</span>
+  <span>{projectName}</span>
+
+  <span class="project-year">{year}</span>
+
+  <span>
+    <div class="project-client-head">Client</div>
+    <div class="project-client">{client}</div>
+  </span>
 </div>
 
 <style>
   .project-title {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* spreads the three items nicely */
+    justify-content:flex-start;
+    gap: 100px;
     align-items: center;
-    width: 100%;
-    gap: 1rem; /* optional */
+    color: white;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-left: 15px;
+
   }
 
-  .project-title span {
-    font-size: 1.25rem; /* optional */
+  .project-year {
+    font-size: 1.05rem;
+  }
+
+  .project-client-head {
+    font-weight: 100;
+    font-size: 1.25rem;
+    margin-top: 25px;
+  }
+
+  .project-client {
+    text-transform: none;
+    font-size: 1.25rem;
+    margin-top: 0;
   }
 </style>

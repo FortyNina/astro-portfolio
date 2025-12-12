@@ -1,16 +1,29 @@
 ---
+const pageTitle = "Nina Demirjian - Color Play";
+const projectName = "Color Play";
+const year = "2020";
+const client = "American Museum of Natural History";
+
 import "../../styles/global.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const pageTitle = "Nina Demirjian - Color Play";
-
 import { Image } from "astro:assets";
+import ProjectTitle from "../../components/ProjectTitle.astro";
 import colorplay_00 from "../../assets/colorplay/colorplay_00.png";
 ---
 
-<html lang="en">
-    <BaseLayout pageTitle={pageTitle}>
-        <Image src={colorplay_00} alt="Color Play 0" class="project-header-image" />
+<BaseLayout pageTitle={pageTitle}>
+    <Image src={colorplay_00} alt="Color Play 0" class="project-header-image" />
+    <ProjectTitle
+        projectName={projectName}
+        year={year}
+        client={client}
+    />
 
-        
-    </BaseLayout>
-</html>
+    <p class="project-body">
+        Color Play is an interactive installation developed in Unity. Users interact with a set of 4 visual scenes projected on the wall and floor to experiment with color. An Xbox Kinect detects user motion to effect dynamic visuals on the projected screens. A separate touch screen kiosk gives users the ability to modify colors used in the visuals.
+        <br><br>
+        Color Play was a part of the American Museum of Natural History’s special exhibition, The Nature of Color, which opened in early March 2020. 
+        <br><br>
+        I worked on a small team in Unity to create visuals and functionality for Color Play.
+    </p>
+</BaseLayout>
