@@ -13,17 +13,36 @@ import colorplay_00 from "../../assets/colorplay/colorplay_00.png";
 
 <BaseLayout pageTitle={pageTitle}>
     <Image src={colorplay_00} alt="Color Play 0" class="project-header-image" />
-    <ProjectTitle
-        projectName={projectName}
-        year={year}
-        client={client}
-    />
+    <ProjectTitle projectName={projectName} year={year} client={client} />
 
     <p class="project-body">
-        Color Play is an interactive installation developed in Unity. Users interact with a set of 4 visual scenes projected on the wall and floor to experiment with color. An Xbox Kinect detects user motion to effect dynamic visuals on the projected screens. A separate touch screen kiosk gives users the ability to modify colors used in the visuals.
-        <br><br>
-        Color Play was a part of the American Museum of Natural History’s special exhibition, The Nature of Color, which opened in early March 2020. 
-        <br><br>
-        I worked on a small team in Unity to create visuals and functionality for Color Play.
+        Color Play is an interactive installation developed in Unity. Users
+        interact with a set of 4 visual scenes projected on the wall and floor
+        to experiment with color. An Xbox Kinect detects user motion to effect
+        dynamic visuals on the projected screens. A separate touch screen kiosk
+        gives users the ability to modify colors used in the visuals.
+        <br /><br />
+        Color Play was a part of the American Museum of Natural History’s special
+        exhibition, The Nature of Color, which opened in early March 2020.
+        <br /><br />
+        I worked on a small team in Unity to create visuals and functionality for
+        Color Play.
     </p>
+    <br />
+    <p style="color: rgb(188, 188, 188)" class="project-body">
+        Notable Contributions
+    </p>
+    <ul class="project-body">
+        <li>
+            Created lightweight particle systems and VFX graphs that changed
+            color at runtime from user input. The effects would populate at
+            positions on the screen according to user position data from the
+            Kinect.
+        </li>
+        <li>
+            Modified compute shaders to take in user position data and update
+            visuals accordingly. The resulting effect allowed users to “push”
+            color around the screen with their hands.
+        </li>
+    </ul>
 </BaseLayout>
