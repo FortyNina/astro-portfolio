@@ -18,23 +18,18 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background stays fixed */
   background-color: rgba(0, 0, 0, 0.85);
   background-blend-mode: darken;
 }
 
-/* fixed border around viewport */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  /* top:0; right:0; bottom:0; left:0; */
   border: 8px solid black;
   pointer-events: none;
-  /* allow interacting with content */
   box-sizing: border-box;
   z-index: 9999;
-  /* ensures it's above everything */
 }
 
 nav{
