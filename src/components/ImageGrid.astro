@@ -1,8 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import colorplay_00 from "../../assets/colorplay/colorplay_00.png";
----
+const { images } = Astro.props;
 
+---
 <div class="image-grid">
-  <Image src={colorplay_00} alt="" class="grid-img" />
+  {images.map((img: ImageMetadata) => (
+    <Image src={img} alt="" class="grid-img" />
+  ))}
 </div>

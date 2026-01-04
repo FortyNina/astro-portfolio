@@ -1,0 +1,51 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import colorplay_00 from "../assets/colorplay/colorplay_00.png";
+import { Image } from "astro:assets";
+import ProjectTitle from "../components/ProjectTitle.astro";
+import ImageGrid from "../components/ImageGrid.astro";
+
+const {
+    pageTitle,
+    projectName,
+    year,
+    client,
+    notableContributions,
+    headerImage,
+    projectImages,
+} = Astro.props;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <main>
+        <Image
+            src={headerImage}
+            alt="Color Play 0"
+            class="project-header-image"
+        />
+        <ProjectTitle projectName={projectName} year={year} client={client} />
+
+        <section class="project-body">
+            <slot />
+        </section>
+        <br />
+
+        <p style="color: rgb(188, 188, 188)" class="project-body">
+            Notable Contributions
+        </p>
+        {
+            notableContributions.length > 0 && (
+                <ul class="project-body">
+                    {notableContributions.map((item: unknown) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+            )
+        }
+
+        <br />
+        <br />
+
+        <ImageGrid images={projectImages} />
+    </main>
+</BaseLayout>
