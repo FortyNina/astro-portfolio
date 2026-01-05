@@ -3,6 +3,10 @@ const pageTitle = "Nina Demirjian - Color Play";
 const projectName = "Color Play";
 const year = "2020";
 const client = "American Museum of Natural History";
+const notableContributions = [
+  "Created lightweight particle systems and VFX graphs that changed color at runtime from user input. The effects would populate at positions on the screen according to user position data from the Kinect.",
+  "Modified compute shaders to take in user position data and update visuals accordingly. The resulting effect allowed users to “push” color around the screen with their hands."
+];
 
 import "../../styles/global.css";
 import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
@@ -17,7 +21,7 @@ import colorplay_06 from "../../assets/colorplay/colorplay_06.png";
 import colorplay_07 from "../../assets/colorplay/colorplay_07.png";
 import colorplay_gif_00 from "../../assets/colorplay/colorplay_00.gif";
 
-const colorplayImages = [
+const images = [
     colorplay_01,
     colorplay_gif_00,
     colorplay_02,
@@ -34,11 +38,8 @@ const colorplayImages = [
     projectName={projectName}
     year={year}
     client={client}
-    notableContributions={[
-        "Created lightweight particle systems and VFX graphs that changed color at runtime from user input. The effects would populate at positions on the screen according to user position data from the Kinect.",
-        "Modified compute shaders to take in user position data and update visuals accordingly. The resulting effect allowed users to “push” color around the screen with their hands.",
-    ]}
-    projectImages={colorplayImages}
+    notableContributions={notableContributions}
+    projectImages={images}
     headerImage={colorplay_00}
 >
     <p>
