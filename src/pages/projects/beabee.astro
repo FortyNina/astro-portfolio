@@ -1,0 +1,55 @@
+---
+const pageTitle = "Nina Demirjian - Be a Bee";
+const projectName = "Be a Bee";
+const year = "2023";
+const client = "American Museum of Natural History";
+const notableContributions = [
+    "All systems implementation. This included bee movement behavior and state machine, tutorials, a hex map system, resource management systems, and more.",
+    "UI implementation",
+    "A system to read in gameplay variables from a JSON at runtime. This allowed designers at the museum to easily modify gameplay without needing to make a new build.",
+    "Set up animator controllers for different bee types from sprite sheets."
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import bee_01 from "../../assets/beabee/bee_01.png";
+import bee_02 from "../../assets/beabee/bee_02.png";
+import bee_03 from "../../assets/beabee/bee_03.png";
+import bee_04 from "../../assets/beabee/bee_04.png";
+import bee_05 from "../../assets/beabee/bee_05.png";
+import bee_06 from "../../assets/beabee/bee_06.png";
+import bee_07 from "../../assets/beabee/bee_07.png";
+import bee_08 from "../../assets/beabee/bee_08.png";
+import bee_09 from "../../assets/beabee/bee_09.png";
+
+
+
+
+const images = [bee_01, bee_02, bee_03, bee_04, bee_05, bee_06, bee_07, bee_08, bee_09];
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    headerImage={bee_01}
+>
+    <p>
+        Be A Bee is a short, single-player, educational resource management game
+        developed in Unity for touch screen PC. Players build and maintain a
+        small bee hive and must balance resources like honey, bee bread, and
+        bees.
+        <br /><br />
+        Be a Bee was built for the American Museum of Natural History. It opened in
+        March 2023 as part of the museum’s Gilder Center for Science, Education, and
+        Innovation. There are two instances of the game running on touch screens in
+        the museum that visitors can play. The game is tailored to last about 3-4
+        minutes per play-through.
+        <br /><br />
+        I was the main Unity engineer on Be A Bee, working with a small team of designers and an artist at AMNH. 
+    </p>
+</ProjectPageLayout>
