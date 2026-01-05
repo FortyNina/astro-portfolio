@@ -7,9 +7,13 @@ const { projectName, year, client } = Astro.props;
 
   <span class="project-year">{year}</span>
 
+  
   <span>
-    <div class="project-client-head">Client</div>
-    <div class="project-client">{client}</div>
+    {client && (
+      <div class="project-client-head">Client</div>
+      <div class="project-client">{client}</div>
+    )}
+
   </span>
 </div>
 

@@ -1,0 +1,76 @@
+---
+const pageTitle = "Nina Demirjian - Red Planet Farming";
+const projectName = "Red Planet Farming";
+const year = "2020";
+const client = "Sloan Foundation";
+const notableContributions = [
+    "All systems design and balancing",
+    "All systems development. This included a player save data system, resource management systems, UI implementation, a hex map system, a procedural weather system, tutorials, gameplay features, and more.",
+    "Integrated the Steamworks.NET SDK and Steam achievements into the project for the Steam launch.",
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import rpf_00 from "../../assets/rpf/rpf_00.png";
+import rpf_01 from "../../assets/rpf/rpf_01.png";
+import rpf_02 from "../../assets/rpf/rpf_02.png";
+import rpf_03 from "../../assets/rpf/rpf_03.png";
+import rpf_04 from "../../assets/rpf/rpf_04.png";
+import rpf_05 from "../../assets/rpf/rpf_05.png";
+import rpf_06 from "../../assets/rpf/rpf_06.png";
+import rpf_07 from "../../assets/rpf/rpf_07.png";
+import rpf_08 from "../../assets/rpf/rpf_08.png";
+import rpf_09 from "../../assets/rpf/rpf_09.png";
+import rpf_10 from "../../assets/rpf/rpf_10.png";
+import rpf_11 from "../../assets/rpf/rpf_11.png";
+import rpf_12 from "../../assets/rpf/rpf_12.png";
+import rpf_13 from "../../assets/rpf/rpf_13.png";
+import rpf_14 from "../../assets/rpf/rpf_14.png";
+
+import rpf_gif_00 from "../../assets/rpf/rpf_00.gif";
+import rpf_gif_01 from "../../assets/rpf/rpf_01.gif";
+
+const images = [
+    rpf_gif_00,
+    rpf_gif_01,
+    rpf_00,
+    rpf_01,
+    rpf_02,
+    rpf_03,
+    rpf_04,
+    rpf_05,
+    rpf_06,
+    rpf_07,
+    rpf_09,
+    rpf_10,
+    rpf_11,
+    rpf_12,
+    rpf_13,
+    rpf_14,
+];
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    headerImage={rpf_08}
+>
+    <p>
+        Red Planet Farming is a casual, single-player strategy game for desktop
+        made in Unity (C#). The game received the NYU & Alfred P. Sloan
+        Foundation Games Production Grant in 2019 and released on Steam in May
+        2020. The game currently has over 60,000 downloads and an overwhelmingly
+        positive reccomendation rating.
+        <br /><br />
+        Red Planet Farming was a part of the MAGFest Indie Video Game Showcase (MIVS)
+        in 2020. A demo of the game was also released on CoolMathGames in early 2020.
+        <br /><br />
+        I was the sole designer and developer on Red Planet Farming. My team also
+        consisted of artist Sean Park and sound designer Sean Porio.
+    </p>
+</ProjectPageLayout>
