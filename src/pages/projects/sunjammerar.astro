@@ -1,0 +1,45 @@
+---
+const pageTitle = "Nina Demirjian - Sunjammer AR";
+const projectName = "Sunjammer AR";
+const year = "In Development";
+const client = "Toni Dove";
+const notableContributions = [
+    "Built AR-triggered cinematic sequences combining animation, 3D text, visual effects, and audio in Unity's timeline system.",
+    "Adapted visual elements from the larger installation piece (Sunjammer Six, built for PC in HDRP) to work in URP. Maintained visual integrity of these original elements while optimizing for mobile constraints.",
+    "Developed core architecture of project, including a scalable system to map graphics on each page to its corresponding AR scene.",
+    "Advised client on AR image-trigger design for the book spreads, optimizing for graphics that would trigger content reliably and remain stable.",
+    "Set up and maintained Testflight environment for testing builds.",
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import sunjammerar_gif_00 from "../../assets/sunjammerar/sunjammerar_00.gif";
+import sunjammerar_gif_01 from "../../assets/sunjammerar/sunjammerar_01.gif";
+
+const images = [sunjammerar_gif_01];
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    headerImage={sunjammerar_gif_00}
+>
+    <p>
+        Sunjammer AR is a mobile augmented-reality experience built in Unity in
+        collaboration with artist Toni Dove. The experience is designed as a
+        companion app to her upcoming book based on her installation project
+        Sunjammer Six. Select pages have graphics that act as image-based
+        triggers to reveal AR scenes. The project is currently in development.
+        <br /><br />
+        I am the main Unity engineer on the project. The app uses ARFoundation for
+        the AR functionality and is planned to release on both iOS and Android alongside
+        the publication of the companion book.
+        <br /><br />
+        More info about the project can be found on my client's blog here.
+    </p>
+</ProjectPageLayout>
