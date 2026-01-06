@@ -1,0 +1,72 @@
+---
+const pageTitle = "Nina Demirjian - Hunt Like a Hammerhead";
+const projectName = "Hunt Like a Hammerhead";
+const year = "2021";
+const client = "American Museum of Natural History";
+const notableContributions = [
+    "Implemented player movement controls that used hand position data from the ultrahaptics board to steer the shark.",
+    "Built a waypoint system that kept players on a set track as they moved through the ocean environment. Players still had a range of motion on this path, but the waypoint system kept them from going out of bounds.",
+    "Implemented a stingray hunting mini game. This included combat controls for the player and AI movement behavior for the stingrays. The stingrays were populated in the environment using object pooling.",
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+ 
+import hlah_gif_00 from "../../assets/hlah/hlah_00.gif";
+import hlah_gif_01 from "../../assets/hlah/hlah_01.gif";
+
+import hlah_00 from "../../assets/hlah/hlah_00.png";
+import hlah_01 from "../../assets/hlah/hlah_01.png";
+import hlah_02 from "../../assets/hlah/hlah_02.png";
+import hlah_03 from "../../assets/hlah/hlah_03.png";
+import hlah_05 from "../../assets/hlah/hlah_05.png";
+import hlah_06 from "../../assets/hlah/hlah_06.png";
+import hlah_07 from "../../assets/hlah/hlah_07.png";
+import hlah_08 from "../../assets/hlah/hlah_08.png";
+import hlah_09 from "../../assets/hlah/hlah_09.png";
+import hlah_10 from "../../assets/hlah/hlah_10.png";
+import hlah_11 from "../../assets/hlah/hlah_11.png";
+
+
+
+
+
+const images = [
+    hlah_gif_01,
+    hlah_00,
+    hlah_08,
+    hlah_02,
+    hlah_11,
+    hlah_03,
+    hlah_05,
+    hlah_06,
+    hlah_07,
+    hlah_09,
+    hlah_10,
+    
+];
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    headerImage={hlah_gif_00}
+>
+    <p>
+        Hunt Like a Hammerhead is an interactive experience built in Unity.
+        Players steer a hammerhead shark through an ocean environment and hunt
+        for stingrays. The experience uses an Ultraleap Ultrahaptics board for
+        the controls.
+        <br /><br />
+        Hunt Like a Hammerhead was a part of the American Museum of Natural History’s
+        special exhibition, Sharks, which opened in early December 2021. The exhibit
+        has since traveled to other museums across the country.
+        <br /><br />
+        I was one of the programmers on Hunt Like A Hammerhead. I worked with designers,
+        a 3D modeler, an environmental artist and other developers.
+    </p>
+</ProjectPageLayout>
