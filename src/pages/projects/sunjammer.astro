@@ -1,0 +1,62 @@
+---
+const pageTitle = "Nina Demirjian - Sunjammer Six";
+const projectName = "Sunjammer Six";
+const year = "2026";
+const client = "Toni Dove";
+const notableContributions = [
+    "Built a to-scale model of the solar system. Physics for the system is simulated by accounting for planet mass, distance from the sun, radius, eccentricity of orbits, orbital inclination, and perihelion and aphelion distances for each planet's orbit. Users can zoom and rotate the solar system with arm gestures detected by the Kinect.",
+    "Worked with VFX graphs, shaders, and particle system to create other visuals throughout the piece. Users can affect the visuals of the particles and VFX graphs via the Kinect.",
+    "Created custom timeline clips for Unity's timeline system to sequence different parts of the installation. This allowed my client to work directly in the Unity editor to layout and tweak progression of the experience without needing to write code.",
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import sunjammer_gif_00 from "../../assets/sunjammer/sunjammer_00.gif";
+import sunjammer_gif_01 from "../../assets/sunjammer/sunjammer_01.gif";
+import sunjammer_gif_02 from "../../assets/sunjammer/sunjammer_02.gif";
+import sunjammer_gif_03 from "../../assets/sunjammer/sunjammer_03.gif";
+
+import sunjammer_00 from "../../assets/sunjammer/sunjammer_00.png";
+import sunjammer_01 from "../../assets/sunjammer/sunjammer_01.png";
+import sunjammer_02 from "../../assets/sunjammer/sunjammer_02.png";
+import sunjammer_03 from "../../assets/sunjammer/sunjammer_03.png";
+import sunjammer_04 from "../../assets/sunjammer/sunjammer_04.png";
+import sunjammer_05 from "../../assets/sunjammer/sunjammer_05.png";
+import sunjammer_06 from "../../assets/sunjammer/sunjammer_06.png";
+
+
+const images = 
+[
+    sunjammer_00,
+    sunjammer_gif_00,
+    sunjammer_01,
+    sunjammer_02,
+    sunjammer_03,
+    sunjammer_gif_02,
+    sunjammer_04,
+    sunjammer_gif_03,
+    sunjammer_05,
+    sunjammer_06
+    ];
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    headerImage={sunjammer_gif_01}
+>
+    <p>
+        Sunjammer Six is an interactive installation and performance piece I
+        have been working on for artist Toni Dove.
+        <br /><br />
+        I work on a small team in Unity to create visuals and functionality for Sunjammer
+        Six.
+        <br /><br />
+        More info about the project can be found on my client's blog here.
+    </p>
+</ProjectPageLayout>
