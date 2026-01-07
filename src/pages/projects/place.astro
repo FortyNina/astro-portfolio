@@ -1,0 +1,54 @@
+---
+const pageTitle = "Nina Demirjian - Place";
+const projectName = "Place";
+const year = "2021";
+const client = "Eternal";
+const notableContributions = [
+    "Implemented isometric camera controls with Cinemachine, including zoom, rotation, and follow functionality.",
+    "Developed a “Build-mode” system for users to edit their tiles and place furniture.",
+    "UI Implementation",
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import place_00 from "../../assets/place/place_00.png";
+import place_01 from "../../assets/place/place_01.png";
+import place_02 from "../../assets/place/place_02.png";
+import place_03 from "../../assets/place/place_03.png";
+import place_04 from "../../assets/place/place_04.png";
+import place_05 from "../../assets/place/place_05.png";
+import place_07 from "../../assets/place/place_07.png";
+import place_08 from "../../assets/place/place_08.png";
+import place_09 from "../../assets/place/place_09.png"; 
+import place_10 from "../../assets/place/place_10.png";
+import place_11 from "../../assets/place/place_11.png";
+
+
+const images = [place_00, place_01, place_08, place_09, place_10];
+const mobileHeaderImages = [place_02, place_11, place_07, place_04, place_05]
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    headerImage={place_00}
+    isMobile={true}
+    mobileHeaderImages={mobileHeaderImages}
+>
+    <p>
+        Place was a mobile social app developed for iOS in Unity. The social
+        network in the world was comprised of a series of "tiles" in a grid,
+        with each user occupying one tile in space. Users could traverse across
+        tiles to visit friends or other users in the network. Users could also
+        decorate their tiles and send messages to users on neighboring tiles.
+        <br /><br />
+        Place was developed for the startup Eternal and had a brief public beta in
+        November of 2021.
+    </p>
+
+</ProjectPageLayout>

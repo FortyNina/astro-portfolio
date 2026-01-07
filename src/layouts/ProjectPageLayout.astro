@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import colorplay_00 from "../assets/colorplay/colorplay_00.png";
 import { Image } from "astro:assets";
 import ProjectTitle from "../components/ProjectTitle.astro";
 import ImageGrid from "../components/ImageGrid.astro";
@@ -13,16 +12,36 @@ const {
     notableContributions,
     headerImage,
     projectImages,
+    isMobile,
+    mobileHeaderImages,
 } = Astro.props;
+
+const landscapeVariant = isMobile ? "mobile" : "landscape";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <main>
-        <Image
-            src={headerImage}
-            alt="Color Play 0"
-            class="project-header-image"
-        />
+        {
+            !isMobile && (
+                <Image
+                    src={headerImage}
+                    alt="Header"
+                    class="project-header-image"
+                />
+            )
+        }
+
+        {
+            isMobile && (
+                <div style="margin-top: 70px;">
+                    <ImageGrid
+                        images={mobileHeaderImages}
+                        imageOrientation={landscapeVariant}
+                    />
+                </div>
+            )
+        }
+
         <ProjectTitle projectName={projectName} year={year} client={client} />
 
         <section class="project-body">
@@ -42,10 +61,8 @@ const {
                 </ul>
             )
         }
-
         <br />
         <br />
-
-        <ImageGrid images={projectImages} />
+        <ImageGrid images={projectImages} imageOrientation={landscapeVariant} />
     </main>
 </BaseLayout>

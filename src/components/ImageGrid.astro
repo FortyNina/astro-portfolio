@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
-const { images } = Astro.props;
-
+const { images, imageOrientation = "landscape" } = Astro.props;
 ---
-<div class="image-grid">
+
+<div class={`image-grid image-grid--${imageOrientation}`}>
   {images.map((img: ImageMetadata) => (
-    <Image src={img} alt="" class="grid-img" />
+    <Image src={img} alt="" />
   ))}
 </div>
