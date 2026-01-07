@@ -1,0 +1,58 @@
+---
+const pageTitle = "Nina Demirjian - Club Eternal";
+const projectName = "Club Eternal";
+const year = "2022";
+const client = "Eternal";
+const notableContributions = [
+    "Built a flexible Menu Controller framework for toggling UI menus and popups. All of our UI menus were generated through this system. ",
+    "Built an Event Controller system to route most of our event calls and callbacks. This helped alleviate inter-class dependencies throughout the project.",
+    "Worked with the Photon library for Unity to implement networked features. This included an in-game chat system and friending system.",
+    "Built the Unity-side infrastructure for loading data for each virtual event at runtime. This allowed us to update UI and the audio-steaming source for each event without creating a new build.",
+    "Worked with a small team of iOS engineers to implement the “Unity as a Library” feature. This allowed us to launch the Unity build of Club Eternal from within a larger mobile app built in Swift.",
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import ce_01 from "../../assets/clubeternal/ce_01.png";
+import ce_02 from "../../assets/clubeternal/ce_02.png";
+import ce_03 from "../../assets/clubeternal/ce_03.png";
+import ce_04 from "../../assets/clubeternal/ce_04.png";
+import ce_05 from "../../assets/clubeternal/ce_05.png";
+import ce_07 from "../../assets/clubeternal/ce_07.png";
+import ce_08 from "../../assets/clubeternal/ce_08.png";
+import ce_09 from "../../assets/clubeternal/ce_09.png";
+import ce_10 from "../../assets/clubeternal/ce_10.png";
+import ce_11 from "../../assets/clubeternal/ce_11.png";
+
+
+const images = [ce_09, ce_05, ce_04, ce_10, ce_07];
+const mobileHeaderImages = [ce_02, ce_01, ce_08, ce_03, ce_11, ];
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    isMobile={true}
+    mobileHeaderImages={mobileHeaderImages}
+>
+    <p>
+        Club Eternal was a multiplayer, mobile virtual event platform. Players
+        could attend virtual events, listen to music, and chat with each other
+        as avatars in a 3d virtual space. The experience was contained within a
+        larger iOS Swift app that had a ticketing feature where users could also
+        purchase tickets to in-person shows and raves.
+        <br /><br />
+        Club Eternal launched in late 2022 and was live through spring of 2023. The
+        project eventually morphed into a new, similar experience called Eternal Radio.
+        <br /><br />
+        I was one of the Unity developers on Club Eternal. I worked on a small team
+        with other Unity developers, iOS developers, backend developers, designers,
+        and a 3D modeler. We worked with the Photon library for Unity to handle multiplayer
+        networking, and the Agora library for voice chat functionality.
+    </p>
+</ProjectPageLayout>
