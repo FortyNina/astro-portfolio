@@ -1,7 +1,7 @@
 ---
 const pageTitle = "Nina Demirjian - Sunjammer Six";
-const projectName = "Sunjammer Six";
-const year = "2026";
+export const projectName = "Sunjammer Six";
+export const year = "2026";
 const client = "Toni Dove";
 const notableContributions = [
     "Built a to-scale model of the solar system. Physics for the system is simulated by accounting for planet mass, distance from the sun, radius, eccentricity of orbits, orbital inclination, and perihelion and aphelion distances for each planet's orbit. Users can zoom and rotate the solar system with arm gestures detected by the Kinect.",
@@ -25,9 +25,7 @@ import sunjammer_04 from "../../assets/sunjammer/sunjammer_04.png";
 import sunjammer_05 from "../../assets/sunjammer/sunjammer_05.png";
 import sunjammer_06 from "../../assets/sunjammer/sunjammer_06.png";
 
-
-const images = 
-[
+const images = [
     sunjammer_00,
     sunjammer_gif_00,
     sunjammer_01,
@@ -37,8 +35,11 @@ const images =
     sunjammer_04,
     sunjammer_gif_03,
     sunjammer_05,
-    sunjammer_06
-    ];
+    sunjammer_06,
+];
+
+export const orderInList = 10;
+export const tags = ["installation"];
 ---
 
 <ProjectPageLayout

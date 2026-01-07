@@ -1,6 +1,43 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Nina Demirjian";
+
+type ProjectModule = {
+  projectName?: string;
+  order?: number;
+  year?: string;
+  tags?: []
+};
+
+const projectPages = import.meta.glob<ProjectModule>(
+  './projects/*.astro',
+  { eager: true }
+);
 ---
 
-<BaseLayout pageTitle={pageTitle}></BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
+
+<div class="project-list">
+  {Object.entries(projectPages)
+    .map(([path, module]) => {
+      const slug = path.replace('./projects/', '').replace('.astro', '');
+      return {
+        slug,
+        title: module.projectName ?? slug,
+        order: module.order ?? 999,
+        year: module.year ?? '',
+        tags: module.tags ?? [],
+      };
+    })
+    .sort((a, b) => b.order - a.order)
+    .map(({ slug, title, order, year, tags }) => (
+      <a href={`/projects/${slug}`} class="project-link">
+        {year ? `${year}. ` : ''}
+        {title.toUpperCase()}
+        {tags.length ? <span class="project-tags">({tags.join(', ')})</span> : ''}
+      </a>
+    ))}
+</div>
+
+
+</BaseLayout>
