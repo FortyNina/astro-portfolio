@@ -6,38 +6,77 @@ type ProjectModule = {
   projectName?: string;
   order?: number;
   year?: string;
-  tags?: []
+  tags?: [];
 };
 
-const projectPages = import.meta.glob<ProjectModule>(
-  './projects/*.astro',
-  { eager: true }
-);
+const projectPages = import.meta.glob<ProjectModule>("./projects/*.astro", {
+  eager: true,
+});
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <!-- Centering wrapper -->
+  <div
+    style="
+      display: flex;
+      justify-content: center; 
+      align-items: flex-start;
+      padding: 2rem;
+      margin-top: 10%;
+    "
+  >
+    <div
+      style="
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        max-width: 1200px;
+        width: 100%;
+      "
+    >
+      <div style="flex: 1 1 400px; max-width: 600px;">
+        <iframe
+          src="https://www.youtube.com/embed/hmTaXDmlmLY?si=dMyJ1NQdIIgy7VB0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          width="100%"
+          height="315"
+        ></iframe>
+      </div>
 
-<div class="project-list">
-  {Object.entries(projectPages)
-    .map(([path, module]) => {
-      const slug = path.replace('./projects/', '').replace('.astro', '');
-      return {
-        slug,
-        title: module.projectName ?? slug,
-        order: module.order ?? 999,
-        year: module.year ?? '',
-        tags: module.tags ?? [],
-      };
-    })
-    .sort((a, b) => b.order - a.order)
-    .map(({ slug, title, order, year, tags }) => (
-      <a href={`/projects/${slug}`} class="project-link">
-        {year ? `${year}. ` : ''}
-        {title.toUpperCase()}
-        {tags.length ? <span class="project-tags">({tags.join(', ')})</span> : ''}
-      </a>
-    ))}
-</div>
-
-
+      <div class="project-list" style="flex: 1 1 300px; min-width: 250px;">
+        {
+          Object.entries(projectPages)
+            .map(([path, module]) => {
+              const slug = path.replace("./projects/", "").replace(".astro", "");
+              return {
+                slug,
+                title: module.projectName ?? slug,
+                order: module.order ?? 999,
+                year: module.year ?? "",
+                tags: module.tags ?? [],
+              };
+            })
+            .sort((a, b) => b.order - a.order)
+            .map(({ slug, title, order, year, tags }) => (
+              <a href={`/projects/${slug}`} class="project-link">
+                {year ? `${year}. ` : ""}
+                {title.toUpperCase()}
+                {tags.length ? (
+                  <span class="project-tags">({tags.join(", ")})</span>
+                ) : (
+                  ""
+                )}
+              </a>
+            ))
+        }
+      </div>
+    </div>
+  </div>
 </BaseLayout>
+
+
