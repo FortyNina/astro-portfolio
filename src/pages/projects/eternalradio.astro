@@ -1,0 +1,61 @@
+---
+const pageTitle = "Nina Demirjian - Eternal Radio";
+const projectName = "Eternal Radio";
+const year = "2023";
+const client = "Eternal";
+const notableContributions = [
+    "Developed an avatar customization system with interchangeable assets.",
+    "Led feature breakdown meetings to translate Figma designs into actionable engineering tasks for the Unity team.",
+    "UI implementation",
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import er_00 from "../../assets/eternalradio/er_00.png";
+import er_01 from "../../assets/eternalradio/er_01.png";
+import er_02 from "../../assets/eternalradio/er_02.png";
+import er_03 from "../../assets/eternalradio/er_03.png"; 
+import er_04 from "../../assets/eternalradio/er_04.png";
+import er_05 from "../../assets/eternalradio/er_05.png";
+import er_06 from "../../assets/eternalradio/er_06.png";
+import er_07 from "../../assets/eternalradio/er_07.png";
+import er_08 from "../../assets/eternalradio/er_08.png";
+import er_09 from "../../assets/eternalradio/er_09.png";
+import er_10 from "../../assets/eternalradio/er_10.png";
+import er_11 from "../../assets/eternalradio/er_11.png";
+import er_12 from "../../assets/eternalradio/er_12.png";
+import er_13 from "../../assets/eternalradio/er_13.png";
+import er_14 from "../../assets/eternalradio/er_14.png";
+
+
+const images = [er_05, er_06, er_07, er_08, er_09,er_10,er_11,er_12,er_13,er_14];
+const mobileHeaderImages = [er_00, er_01, er_02, er_03, er_04];
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    isMobile={true}
+    mobileHeaderImages={mobileHeaderImages}
+>
+    <p>
+        Eternal Radio was a multi-player mobile social experience developed in
+        Unity and Swift for iOS. Players could attend virtual events, listen to
+        music, watch live streams, and chat with each other as avatars in a 3d
+        virtual space. Eternal hosted various guests to run talk shows, dj sets,
+        and film screenings within the experience, including content produced
+        in-house.
+        <br /><br />
+        Eternal Radio was built for the startup Eternal in 2023. The app was live
+        from early 2023 through November 2023.
+        <br /><br />
+        I was one of the Unity developers on Eternal Radio. I worked on a small team
+        with other Unity developers, iOS developers, backend developers, designers,
+        and a 3D modeler.
+    </p>
+</ProjectPageLayout>
