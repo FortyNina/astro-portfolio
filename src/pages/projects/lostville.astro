@@ -1,0 +1,68 @@
+---
+const pageTitle = "Nina Demirjian - Legend of Lostville";
+const projectName = "Legend of Lostville";
+const year = "2024";
+const client = "Eternal";
+const notableContributions = [
+    "Developed scalable Unity-side infrastructure for dynamically loading 'episode' data from a REST API at runtime. This allowed us to add new episodes and content each week without pushing a build. ",
+    "Built the Unity-side 1-1 chat feature with AI NPCs. This included functionality for sending and receiving messages to the AI NPCs through a REST API and implementing chat window UI from Figma designs.",
+    "Built a flexible hint system that would evaluate the player’s current game state and display a relevant hint accordingly.",
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import lostville_00 from "../../assets/lostville/lostville_00.png";
+import lostville_01 from "../../assets/lostville/lostville_01.png";
+import lostville_02 from "../../assets/lostville/lostville_02.png";
+import lostville_03 from "../../assets/lostville/lostville_03.png";
+import lostville_04 from "../../assets/lostville/lostville_04.png";
+import lostville_05 from "../../assets/lostville/lostville_05.png";
+import lostville_06 from "../../assets/lostville/lostville_06.png";
+import lostville_07 from "../../assets/lostville/lostville_07.png";
+import lostville_08 from "../../assets/lostville/lostville_08.png";
+import lostville_09 from "../../assets/lostville/lostville_09.png";
+import lostville_10 from "../../assets/lostville/lostville_10.png";
+import lostville_11 from "../../assets/lostville/lostville_11.png";
+import lostville_12 from "../../assets/lostville/lostville_12.png";
+import lostville_13 from "../../assets/lostville/lostville_13.png";
+import lostville_14 from "../../assets/lostville/lostville_14.png";
+
+
+const images = [
+    lostville_05,
+    lostville_06,
+    lostville_07,
+    lostville_08,
+    lostville_09,
+    lostville_10,
+    lostville_11,
+    lostville_12,
+    lostville_13,
+    lostville_14,
+];
+const mobileHeaderImages = [lostville_00, lostville_01, lostville_02, lostville_03, lostville_04];
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    isMobile={true}
+    mobileHeaderImages={mobileHeaderImages}
+>
+    <p>
+        Legend of Lostville was a narrative 3D mobile game for iOS. Players
+        played as a detective and chatted with AI NPCs in the town to uncover
+        mysteries. Each week, a new episode with a new mystery was launched for
+        players to solve. The AI personalities were powered by the AI framework
+        Inworld.
+        <br /><br />
+        Legend of Lostville was built in Unity and launched on the app store in spring
+        of 2024.
+        <br /><br />
+    </p>
+</ProjectPageLayout>

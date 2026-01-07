@@ -144,7 +144,7 @@ p {
 
 .image-grid--landscape {
   columns: 550px;
-  column-gap: 1rem;
+  column-gap: .75rem;
 }
 
 .image-grid--mobile {
