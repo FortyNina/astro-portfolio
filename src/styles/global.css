@@ -179,6 +179,16 @@ p {
   font-size: .85em;
 }
 
+.about-image {
+  width: 20vw;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
 /*CSS Animation*/
 @keyframes fadeIn {
   to {

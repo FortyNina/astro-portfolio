@@ -1,10 +1,90 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import me from "../assets/me.png";
+
+import { Image } from "astro:assets";
 
 const pageTitle = "About";
 ---
 
-<html lang="en">
-    <BaseLayout pageTitle={pageTitle} />
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <!-- Centering wrapper -->
+    <div
+        style="
+      display: flex;
+      justify-content: center; 
+      align-items: flex-start;
+      padding: 2rem;
+      padding-right: 18rem;
+      margin-top: 8%;
+    "
+    >
+        <div
+            style="
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        max-width: 1200px;
+        width: 100%;
+      "
+        >
+            <div
+                style="
+    flex: 1 1 400px;
+    max-width: 600px;
+    display: flex;
+    justify-content: flex-end;
+  "
+            >
+                <Image src={me} alt="Header" class="about-image" />
+            </div>
+
+            <div style="flex: 1 1 300px; min-width: 250px;">
+                {
+                    (
+                        <p>
+                            I'm a Brooklyn-based software engineer with 7 years
+                            of experience in game and interactive media
+                            development. My work spans mobile apps, multiplayer
+                            experiences, video games, and gallery installations
+                            that have been featured in museums worldwide.
+                            <>
+                                <br />
+                                <br />
+                            </>
+                            I enjoy programming systems based on real-world
+                            structures, whether it's a simulation experience
+                            about hammerheads built for a museum gallery, or a
+                            resource management game about growing crops.
+                            <>
+                                <br />
+                                <br />
+                            </>
+                            Aside from development, I am also interested in game
+                            design. I was both the designer and developer on one
+                            of my favorite projects I have worked on, Red Planet
+                            Farming.
+                            <>
+                                <br />
+                                <br />
+                            </>
+                            Outside of programming, I spend a lot of time
+                            cooking with friends and baking bread.
+                            <>
+                                <br />
+                                <br />
+                            </>
+                            <>
+                                <br />
+                                <br />
+                            </>
+                            Please feel free to contact me at ninasrd9@gmail.com
+                        </p>
+                    )
+                }
+            </div>
+        </div>
+    </div>
+</BaseLayout>
