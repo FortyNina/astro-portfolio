@@ -37,22 +37,22 @@ const projectPages = import.meta.glob<ProjectModule>("./projects/*.astro", {
     >
       <div style="flex: 1 1 400px; max-width: 600px;">
         <iframe
-          src="https://www.youtube.com/embed/hmTaXDmlmLY?si=dMyJ1NQdIIgy7VB0"
+          src="https://www.youtube.com/embed/hmTaXDmlmLY?autoplay=1&mute=1"
           title="YouTube video player"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
+          allow="autoplay; encrypted-media; picture-in-picture"
           allowfullscreen
           width="100%"
-          height="315"
-        ></iframe>
+          height="315"></iframe>
       </div>
 
       <div class="project-list" style="flex: 1 1 300px; min-width: 250px;">
         {
           Object.entries(projectPages)
             .map(([path, module]) => {
-              const slug = path.replace("./projects/", "").replace(".astro", "");
+              const slug = path
+                .replace("./projects/", "")
+                .replace(".astro", "");
               return {
                 slug,
                 title: module.projectName ?? slug,
@@ -78,5 +78,3 @@ const projectPages = import.meta.glob<ProjectModule>("./projects/*.astro", {
     </div>
   </div>
 </BaseLayout>
-
-

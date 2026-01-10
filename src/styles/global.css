@@ -32,8 +32,8 @@ body::before {
   z-index: 9999;
 }
 
-nav{
-    z-index: 1;
+nav {
+  z-index: 1;
 }
 
 header nav {
@@ -145,17 +145,23 @@ p {
 .image-grid--landscape {
   columns: 550px;
   column-gap: .75rem;
+  row-gap: .75rem;
+  animation: fadeIn 1s ease forwards;
 }
 
 .image-grid--mobile {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  animation: fadeIn 1s ease forwards;
+
 }
 
 .image-grid img {
   width: 100%;
   height: auto;
   display: block;
+  animation: fadeIn 1s ease forwards;
+
 }
 
 .project-list {
