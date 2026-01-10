@@ -144,8 +144,7 @@ p {
 
 .image-grid--landscape {
   columns: 550px;
-  column-gap: .75rem;
-  row-gap: .75rem;
+  column-gap: .5rem;
   animation: fadeIn 1s ease forwards;
 }
 
@@ -153,6 +152,7 @@ p {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   animation: fadeIn 1s ease forwards;
+  column-gap: .5rem;
 
 }
 
@@ -161,6 +161,7 @@ p {
   height: auto;
   display: block;
   animation: fadeIn 1s ease forwards;
+  padding-top: .5rem;
 
 }
 
@@ -194,6 +195,66 @@ p {
   opacity: 0;
   animation: fadeIn 1s ease forwards;
 }
+
+
+/*About Page*/
+
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  padding-right: 18rem;
+  margin-top: 8%;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.about-image-wrapper {
+  flex: 1 1 400px;
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-text {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
+@media (max-width: 768px) {
+  .about-wrapper {
+    padding-right: 2rem;
+    margin-top: 4%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image-wrapper {
+    justify-content: center;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+        object-fit: contain;
+
+  }
+
+  .about-text {
+    max-width: 600px;
+  }
+}
+
 
 /*CSS Animation*/
 @keyframes fadeIn {
