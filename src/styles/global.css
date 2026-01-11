@@ -199,6 +199,8 @@ p {
   margin-top: 20px;
   opacity: 0;
   animation: fadeIn 1s ease forwards;
+  aspect-ratio: auto;
+
 }
 
 .about-wrapper {
@@ -238,12 +240,12 @@ p {
   }
 
   .about-image {
-    width: 60%;
-    height: auto;
-    margin-top: 20px;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-        flex-shrink: 0;
+    width: auto !important;
+    max-width: 200px !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    display: block;
+    object-fit: contain !important;
 
   }
 
@@ -256,7 +258,6 @@ p {
   .about-image-wrapper {
     justify-content: center;
     width: 100%;
-    flex-shrink: 0;
   }
 
 
