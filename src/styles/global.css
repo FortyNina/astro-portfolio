@@ -156,6 +156,21 @@ p {
   animation: fadeIn 1s ease forwards;
 }
 
+.project-header-image-vertical {
+  margin-top: 70px;
+}
+
+@media (max-width: 768px) {
+  .project-header-image {
+    margin-top: 170px;
+  }
+
+  .project-header-image-vertical {
+    margin-top: 170px;
+  }
+
+}
+
 .project-body {
   color: white;
   font-weight: 150;
@@ -318,7 +333,7 @@ p {
 }
 
 /*Video*/
-.dev-reel-video{
+.dev-reel-video {
   flex: 1 1 400px;
   max-width: 600px;
 }

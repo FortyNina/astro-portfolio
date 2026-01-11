@@ -36,6 +36,13 @@ const { projectName, year, client } = Astro.props;
     font-size: 1.05rem;
   }
 
+  /* Mobile */
+@media (max-width: 640px) {
+  .project-year {
+    display: none;
+  }
+}
+
   .project-client-head {
     font-weight: 100;
     font-size: 1.25rem;
