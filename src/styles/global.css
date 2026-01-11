@@ -287,7 +287,7 @@ p {
 @media (max-width: 768px) {
   .about-wrapper {
     padding-right: 2rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
 
   .about-image {
@@ -317,6 +317,17 @@ p {
   }
 }
 
+/*Video*/
+.dev-reel-video{
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .dev-reel-video {
+    padding-top: 5rem;
+  }
+}
 
 /*CSS Animation*/
 @keyframes fadeIn {
