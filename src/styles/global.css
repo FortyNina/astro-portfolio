@@ -186,8 +186,13 @@ p {
   font-size: .85em;
 }
 
+
+
+
+/*About Page*/
+
 .about-image {
-  width: 20vw;
+  width: 70%;
   max-width: 100%;
   height: auto;
   display: block;
@@ -195,9 +200,6 @@ p {
   opacity: 0;
   animation: fadeIn 1s ease forwards;
 }
-
-
-/*About Page*/
 
 .about-wrapper {
   display: flex;
@@ -235,6 +237,16 @@ p {
     margin-top: 4%;
   }
 
+  .about-image {
+    width: 60%;
+    height: auto;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+        flex-shrink: 0;
+
+  }
+
   .about-content {
     flex-direction: column;
     align-items: center;
@@ -243,12 +255,10 @@ p {
 
   .about-image-wrapper {
     justify-content: center;
-    width: 80%;
-    max-width: 300px;
-    height: auto;
-        object-fit: contain;
-
+    width: 100%;
+    flex-shrink: 0;
   }
+
 
   .about-text {
     max-width: 600px;
