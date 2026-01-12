@@ -35,6 +35,13 @@ body::before {
   z-index: 9999;
 }
 
+@media (max-width: 768px) {
+body::before {
+  border: 0px solid black;
+}
+
+}
+
 nav {
   z-index: 1;
 }
