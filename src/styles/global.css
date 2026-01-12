@@ -5,6 +5,9 @@ html {
   scrollbar-gutter: stable;
 
 }
+a {
+  color: inherit;
+}
 
 body {
   margin: 0;
