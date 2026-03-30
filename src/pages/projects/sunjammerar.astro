@@ -5,19 +5,26 @@ export const year = "In Development";
 const client = "Toni Dove";
 const notableContributions = [
     "Built AR-triggered cinematic sequences combining animation, 3D text, visual effects, and audio in Unity's timeline system.",
-    "Adapted visual elements from the larger installation piece (Sunjammer Six, built for PC in HDRP) to work in URP. Maintained visual integrity of these original elements while optimizing for mobile constraints.",
     "Developed core architecture of project, including a scalable system to map graphics on each page to its corresponding AR scene.",
     "Advised client on AR image-trigger design for the book spreads, optimizing for graphics that would trigger content reliably and remain stable.",
-    "Set up and maintained Testflight environment for testing builds.",
+    "Implemented smoothing algorithm for smooth image tracking",
+    "Set up and maintained the app distribution pipeline on both App Store Connect and Google Play Console",
 ];
 
 import "../../styles/global.css";
 import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
 
+import sunjammer_00 from "../../assets/sunjammerar/PhoneScreenshot_00.png";
+import sunjammer_01 from "../../assets/sunjammerar/PhoneScreenshot_02.png";
+import sunjammer_02 from "../../assets/sunjammerar/PhoneScreenshot_03.png";
+
+
+
+
 import sunjammerar_gif_00 from "../../assets/sunjammerar/sunjammerar_00.gif";
 import sunjammerar_gif_01 from "../../assets/sunjammerar/sunjammerar_01.gif";
 
-const images = [sunjammerar_gif_01];
+const images = [sunjammerar_gif_01, sunjammer_00, sunjammer_01, sunjammer_02];
 
 export const orderInList = 11;
 export const tags = ["augmented reality", "iOS", "Android"]
@@ -43,7 +50,7 @@ export const tags = ["augmented reality", "iOS", "Android"]
         the AR functionality and is planned to release on both iOS and Android alongside
         the publication of the companion book.
         <br /><br />
-        <strong><a href="https://tonidove.com/blog/" target="_blank" rel="noopener noreferrer"> More info about the project can be found on my client's blog here.</a></strong>
+        <strong><a href="https://tonidove.com/augmented-reality-book/" target="_blank" rel="noopener noreferrer"> More info about the project can be found on my client's blog here.</a></strong>
        
     </p>
 </ProjectPageLayout>
