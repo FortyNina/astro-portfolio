@@ -1,0 +1,50 @@
+---
+const pageTitle = "Nina Demirjian - CCIR Interactive Tour";
+export const projectName = "CCIR Interactive Tour";
+export const year = "2026";
+const client = "TCCI Manufacturing";
+const notableContributions = [
+    "3D-modeled a climatic testing facility in Blender, utilizing .stp files, AutoCAD floorplans, equipment specifications, and images of the building as visual references.",
+    "Simplified geometry from .stp files and other sourced 3d models to optimize for web performance.",
+    "Built a 3d web app experience in three.js to display the model with interactive tour funcationality",
+    "Designed reactive UI for the interactive tour, based on style guides provided by the client",
+    "Set up a full development and testing ecosystem with Vercel and Cloudflare"
+];
+
+import "../../styles/global.css";
+import ProjectPageLayout from "../../layouts/ProjectPageLayout.astro";
+
+import ccir_00 from "../../assets/ccir/ccir_00.png";
+import ccir_01 from "../../assets/ccir/ccir_01.png";
+import ccir_02 from "../../assets/ccir/ccir_02.png";
+import ccir_03 from "../../assets/ccir/ccir_03.png";
+import ccir_04 from "../../assets/ccir/ccir_04.png";
+
+
+
+
+import ccir_gif_00 from "../../assets/ccir/ccir_00.gif";
+import ccir_gif_01 from "../../assets/ccir/ccir_01.gif";
+
+
+const images = [ ccir_gif_00, ccir_02, ccir_01, ccir_gif_01];
+
+export const orderInList = 9;
+export const tags = ["blender", "three.js", "web"]
+---
+
+<ProjectPageLayout
+    pageTitle={pageTitle}
+    projectName={projectName}
+    year={year}
+    client={client}
+    notableContributions={notableContributions}
+    projectImages={images}
+    headerImage={ccir_00}
+>
+    <p>
+        The CCIR Interactive Tour is a 3D virtual tour of TCCI Manufacturing's Climatic Center for Innovation and Research. The tour is shown on a kiosk at trade shows, and is accesible from the client's <strong><a href="https://tccimfg.com/ccir/" target="_blank" rel="noopener noreferrer"> website.</a></strong>. The tour shows a 3d model of the facility, with the ability to tap into portions of the map to view additional details and specs.
+        <br><br>
+        I was the sole developer on the project. I created the 3d model of the facility in Blender, and built the web app itself with three.js. Some pieces of equipment shown on the model were provided as .stp files, which I optimized in Blender to perform well on web. 
+    </p>
+</ProjectPageLayout>
