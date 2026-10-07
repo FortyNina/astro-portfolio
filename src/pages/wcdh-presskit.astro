@@ -1,0 +1,479 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+
+const pageTitle = "When Civilians Dig Holes Presskit";
+import logo from "../assets/wcdh-presskit/Graphics/WCDHLogo.png";
+
+const shots = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/wcdh-presskit/Screenshots/*.png",
+  { eager: true },
+);
+
+const Screenshots = Object.entries(shots)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, mod], i) => ({
+    image: mod.default,
+    alt: `[screenshot ${i + 1}]`,
+  }));
+
+  const keyArt = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/wcdh-presskit/KeyArt/*.png",
+  { eager: true },
+);
+
+const KeyArt = Object.entries(keyArt)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, mod], i) => ({
+    image: mod.default,
+    alt: `[key art ${i + 1}]`,
+  }));
+
+const factsheet = [
+  { label: "Developer", value: "Nina Appleseed" },
+  { label: "Based in", value: "Brooklyn, NY" },
+  { label: "Release date", value: "Q1 2027" },
+  { label: "Platforms", value: "PC, Mac" },
+  { label: "Engine", value: "Unity" },
+  { label: "Genre", value: "Incremental, Casual, Digging" },
+  { label: "Store page", value: "[Steam / itch.io URL]" },
+];
+
+const features = [
+  "[Feature one: what the player does]",
+  "[Feature two: what makes digging feel different]",
+  "[Feature three: progression / upgrades / world]",
+  "[Feature four: tone, humor, or art style]",
+];
+
+const assets = [
+  { name: "Key art & logos", file: "wcdh-presskit/Logos.zip" },
+  { name: "Screenshots", file: "wcdh-presskit/Screenshots.zip" },
+];
+
+const screenshots = Array.from({ length: 6 }, (_, i) => ({
+  src: `../assets/wcdh-presskit/Screenshots/${String(i + 1).padStart(2, "0")}.png`,
+  alt: `[Screenshot ${i + 1}]`,
+}));
+
+
+const links = [
+  { label: "Discord", href: "https://discord.gg/7tSzt3dms7" },
+  { label: "Steam", href: "https://store.steampowered.com/app/4125580/When_Civilians_Dig_Holes/?beta=1" },
+    { label: "Itch", href: "https://fortynina.itch.io/when-civilians-dig-holes" },
+
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta
+      name="description"
+      content="Press kit for When Civilians Dig Holes: factsheet, trailer, screenshots, logos, and press contact."
+    />
+  </head>
+
+  <body class="presskit">
+    <header id="top">
+      <Image src={logo} alt="When Civilians Dig Holes logo" class="logo" />
+      <p>Press kit</p>
+    </header>
+    <div class="press-content">
+      <main>
+        <section id="factsheet">
+          <h2>Factsheet</h2>
+          <dl>
+            {
+              factsheet.map(({ label, value }) => (
+                <>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </>
+              ))
+            }
+          </dl>
+        </section>
+
+<section id="description">
+  <h2>Description</h2>
+  <div class="body">
+    <h3>Short</h3>
+    <p><i>When Civilians Dig Holes</i> is an incremental game about digging a hole to the other side of the world.</p>
+    <h3>Long</h3>
+    <p>When Civilians Dig Holes is an incremental game that delivers on the collective childhood fantasy of digging a hole to the other side of the world, but this time with the combined strength of hundreds of worms, the financial backing of a hot tub company, and the kindness of your fellow eccentric neighbors. Players can hire "staff", like worms, gophers, and moles to dig their hole, purchase upgrades to increase their digging speed, and mine for ore to generate cash. As they progress, they'll uncover a variety of artifacts that give them Research Points, which can be used to apply for a new digging permit and start fresh on a brand new hole with increased modifiers. Each time the player starts digging a new hole, they can choose which of their neighbor's backyards they want to dig in, which unlocks new upgrades that facilitate different playstyles and builds. </p>
+  </div>
+</section>
+
+        <!-- <section id="features">
+          <h2>Features</h2>
+          <ul>
+            {features.map((f) => <li>{f}</li>)}
+          </ul>
+        </section> -->
+
+
+
+
+        <section id="history">
+          <h2>Development</h2>
+          <p>When Civilians Dig Holes started out as a small prototype for a game jam in 2020. I worked casually on the project for about 4 years until I accidentally released an (unpolished!!!) demo of it on Itch.io in 2025, where it gained traction. From there, development has been ramping up and I am excited to be targeting a Q1 2027 full release.</p>
+        </section>
+
+                <section id="contact">
+  <h2>Contact</h2>
+  <div class="body">
+    <p><a href="mailto:[appleseednina@gmail.com]">appleseednina@gmail.com</a></p>
+    <ul>
+      {links.map(({ label, href }) => (
+        <li><a href={href}>{label}</a></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+                <section id="assets">
+          <h2>Downloads</h2>
+          <ul>
+            {
+              assets.map(({ name, file }) => (
+                <li>
+                  <a href={file} download>
+                    {name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+                <section id="screenshots">
+          <h2>Key Art</h2>
+          <ul class="gallerykeyart">
+            {
+              KeyArt.map(({ image, alt }) => (
+                <li>
+                  <a href={image.src}>
+                    <Image
+                      src={image}
+                      alt={alt}
+                      widths={[800, 1600]}
+                      sizes="(min-width: 80rem) 32rem, 200vw"
+                      loading="lazy"
+                    />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+
+        <section id="screenshots">
+          <h2>Screenshots</h2>
+          <ul class="gallery">
+            {
+              Screenshots.map(({ image, alt }) => (
+                <li>
+                  <a href={image.src}>
+                    <Image
+                      src={image}
+                      alt={alt}
+                      widths={[800, 1600]}
+                      sizes="(min-width: 80rem) 32rem, 200vw"
+                      loading="lazy"
+                    />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section id="trailer">
+          <h2>Trailer</h2>
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/5XN2ODPEfXI"
+              title="When Civilians Dig Holes trailer"
+              loading="lazy"
+              allowfullscreen></iframe>
+          </div>
+        </section>
+
+
+
+
+        <!-- <section id="faq">
+          <h2>Press FAQ</h2>
+          <details>
+            <summary>Can I stream or monetize videos of the game?</summary>
+            <p>[Policy]</p>
+          </details>
+          <details>
+            <summary>Can I get a review key?</summary>
+            <p>[How to request]</p>
+          </details>
+        </section> -->
+
+
+      </main>
+
+      <footer>
+        <p>
+          &copy; {new Date().getFullYear()} Nina Demirjian. All graphical assets are
+          free to use for press and coverage.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  html body.presskit {
+    background: #ffffff
+      url("../assets/wcdh-presskit/Graphics/ArtifactBackgroundB.png") center /
+      cover fixed no-repeat;
+    color: #ffffff;
+  }
+</style>
+
+<style is:global>
+  #top {
+    text-align: center;
+  }
+  #top .logo {
+    display: block;
+    margin: 0 auto;
+    width: min(30rem, 80%);
+    height: auto;
+    padding-top: 25px;
+
+  }
+
+  .press-content {
+    background: #000;
+    color: #f2e9dc;
+    padding: 2rem clamp(1rem, 5vw, 4rem);
+  }
+  html body.presskit {
+    font-family: "DotGothic16", monospace;
+  }
+</style>
+
+<style>
+  .video {
+    aspect-ratio: 16 / 9;
+  }
+  .video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .gallery {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+    gap: 1rem;
+    padding-bottom: 80px;
+  }
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+    .gallerykeyart {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1rem;
+        padding-bottom: 80px;
+
+  }
+  .gallerykeyart img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #factsheet {
+  display: grid;
+  grid-template-columns: .4fr 1fr 1fr;
+  column-gap: 1rem;
+  align-items: start;
+}
+
+#factsheet h2 {
+  grid-column: 1;
+  margin: 0;
+
+}
+
+#factsheet dl {
+  grid-column: 2 / 5;
+  display: grid;
+  grid-template-columns: .35fr 2fr;
+  gap: 0.5rem 0rem;
+  margin: 0;
+  padding-top: 10px;
+}
+
+#factsheet dd {
+  margin: 0;
+}
+
+@media (max-width: 40rem) {
+  #factsheet {
+    grid-template-columns: 1fr;
+  }
+  #factsheet h2,
+  #factsheet dl {
+    grid-column: 1;
+  }
+}
+
+#description {
+  display: grid;
+  grid-template-columns: .4fr 1fr 1fr;
+  column-gap: 1rem;
+  align-items: start;
+  padding-top: 50px;
+}
+
+#description h2 {
+  grid-column: 1;
+  margin: 0;
+}
+
+#description .body {
+  grid-column: 2 / 4;
+    padding-top: 6px;
+
+}
+
+#description .body > :first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 40rem) {
+  #description {
+    grid-template-columns: 1fr;
+  }
+  #description h2,
+  #description .body {
+    grid-column: 1;
+  }
+}
+
+#assets {
+  display: grid;
+  grid-template-columns: .4fr 1fr 1fr;
+  column-gap: 1rem;
+  align-items: start;
+  padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+
+#assets h2 {
+  grid-column: 1;
+  margin: 0;
+}
+
+#assets ul {
+  grid-column: 2 / 4;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+      padding-top: 6px;
+
+}
+
+@media (max-width: 40rem) {
+  #assets {
+    grid-template-columns: 1fr;
+  }
+  #assets h2,
+  #assets ul {
+    grid-column: 1;
+  }
+}
+
+#history {
+  display: grid;
+  grid-template-columns: .4fr 1fr 1fr;
+  column-gap: 1rem;
+  align-items: start;
+  padding-top: 40px;
+}
+
+#history h2 {
+  grid-column: 1;
+  margin: 0;
+}
+
+#history p {
+  grid-column: 2 / 4;
+  margin: 0;
+  padding-top: 6px;
+}
+
+@media (max-width: 40rem) {
+  #history {
+    grid-template-columns: 1fr;
+  }
+  #history h2,
+  #history p {
+    grid-column: 1;
+  }
+}
+
+#contact {
+  display: grid;
+  grid-template-columns: .4fr 1fr 1fr;
+  column-gap: 1rem;
+  align-items: start;
+  padding-top: 40px;
+}
+
+#contact h2 {
+  grid-column: 1;
+  margin: 0;
+}
+
+#contact .body {
+  grid-column: 2 / 4;
+}
+
+#contact .body > :first-child {
+  margin-top: 0;
+}
+
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+@media (max-width: 40rem) {
+  #contact {
+    grid-template-columns: 1fr;
+  }
+  #contact h2,
+  #contact .body {
+    grid-column: 1;
+  }
+}
+</style>
