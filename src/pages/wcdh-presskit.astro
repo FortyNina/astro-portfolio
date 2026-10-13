@@ -17,7 +17,7 @@ const Screenshots = Object.entries(shots)
     alt: `[screenshot ${i + 1}]`,
   }));
 
-  const keyArt = import.meta.glob<{ default: ImageMetadata }>(
+const keyArt = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/wcdh-presskit/KeyArt/*.png",
   { eager: true },
 );
@@ -36,7 +36,11 @@ const factsheet = [
   { label: "Platforms", value: "PC, Mac" },
   { label: "Engine", value: "Unity" },
   { label: "Genre", value: "Incremental, Casual, Digging" },
-  { label: "Store page", value: "[Steam / itch.io URL]" },
+  {
+    label: "Store page",
+    value: "Steam",
+    href: "https://store.steampowered.com/app/4125580/When_Civilians_Dig_Holes/?beta=1",
+  },
 ];
 
 const features = [
@@ -56,12 +60,13 @@ const screenshots = Array.from({ length: 6 }, (_, i) => ({
   alt: `[Screenshot ${i + 1}]`,
 }));
 
-
 const links = [
   { label: "Discord", href: "https://discord.gg/7tSzt3dms7" },
-  { label: "Steam", href: "https://store.steampowered.com/app/4125580/When_Civilians_Dig_Holes/?beta=1" },
-    { label: "Itch", href: "https://fortynina.itch.io/when-civilians-dig-holes" },
-
+  {
+    label: "Steam",
+    href: "https://store.steampowered.com/app/4125580/When_Civilians_Dig_Holes/?beta=1",
+  },
+  { label: "Itch", href: "https://fortynina.itch.io/when-civilians-dig-holes" },
 ];
 ---
 
@@ -95,25 +100,43 @@ const links = [
           <h2>Factsheet</h2>
           <dl>
             {
-              factsheet.map(({ label, value }) => (
+              factsheet.map(({ label, value, href }) => (
                 <>
                   <dt>{label}</dt>
-                  <dd>{value}</dd>
+                  <dd>{href ? <a href={href}>{value}</a> : value}</dd>
                 </>
               ))
             }
           </dl>
         </section>
 
-<section id="description">
-  <h2>Description</h2>
-  <div class="body">
-    <h3>Short</h3>
-    <p><i>When Civilians Dig Holes</i> is an incremental game about digging a hole to the other side of the world.</p>
-    <h3>Long</h3>
-    <p>When Civilians Dig Holes is an incremental game that delivers on the collective childhood fantasy of digging a hole to the other side of the world, but this time with the combined strength of hundreds of worms, the financial backing of a hot tub company, and the kindness of your fellow eccentric neighbors. Players can hire "staff", like worms, gophers, and moles to dig their hole, purchase upgrades to increase their digging speed, and mine for ore to generate cash. As they progress, they'll uncover a variety of artifacts that give them Research Points, which can be used to apply for a new digging permit and start fresh on a brand new hole with increased modifiers. Each time the player starts digging a new hole, they can choose which of their neighbor's backyards they want to dig in, which unlocks new upgrades that facilitate different playstyles and builds. </p>
-  </div>
-</section>
+        <section id="description">
+          <h2>Description</h2>
+          <div class="body">
+            <h3>Short</h3>
+            <p>
+              <i>When Civilians Dig Holes</i> is an incremental game about digging
+              a hole to the other side of the world.
+            </p>
+            <h3>Long</h3>
+            <p>
+              When Civilians Dig Holes is an incremental game that delivers on
+              the collective childhood fantasy of digging a hole to the other
+              side of the world, but this time with the combined strength of
+              hundreds of worms, the financial backing of a hot tub company, and
+              the kindness of your fellow eccentric neighbors. Players can hire
+              "staff", like worms, gophers, and moles to dig their hole,
+              purchase upgrades to increase their digging speed, and mine for
+              ore to generate cash. As they progress, they'll uncover a variety
+              of artifacts that give them Research Points, which can be used to
+              apply for a new digging permit and start fresh on a brand new hole
+              with increased modifiers. Each time the player starts digging a
+              new hole, they can choose which of their neighbor's backyards they
+              want to dig in, which unlocks new upgrades that facilitate
+              different playstyles and builds.
+            </p>
+          </div>
+        </section>
 
         <!-- <section id="features">
           <h2>Features</h2>
@@ -122,27 +145,38 @@ const links = [
           </ul>
         </section> -->
 
-
-
-
         <section id="history">
           <h2>Development</h2>
-          <p>When Civilians Dig Holes started out as a small prototype for a game jam in 2020. I worked casually on the project for about 4 years until I accidentally released an (unpolished!!!) demo of it on Itch.io in 2025, where it gained traction. From there, development has been ramping up and I am excited to be targeting a Q1 2027 full release.</p>
+          <p>
+            When Civilians Dig Holes started out as a small prototype for a game
+            jam in 2020. I worked casually on the project for about 4 years
+            until I accidentally released an (unpolished!!!) demo of it on
+            Itch.io in 2025, where it gained traction. From there, development
+            has been ramping up and I am excited to be targeting a Q1 2027 full
+            release.
+          </p>
         </section>
 
-                <section id="contact">
-  <h2>Contact</h2>
-  <div class="body">
-    <p><a href="mailto:[appleseednina@gmail.com]">appleseednina@gmail.com</a></p>
-    <ul>
-      {links.map(({ label, href }) => (
-        <li><a href={href}>{label}</a></li>
-      ))}
-    </ul>
-  </div>
-</section>
+        <section id="contact">
+          <h2>Contact</h2>
+          <div class="body">
+            <p>
+              <a href="mailto:[appleseednina@gmail.com]"
+                >appleseednina@gmail.com</a>
+            </p>
+            <ul>
+              {
+                links.map(({ label, href }) => (
+                  <li>
+                    <a href={href}>{label}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </section>
 
-                <section id="assets">
+        <section id="assets">
           <h2>Downloads</h2>
           <ul>
             {
@@ -157,7 +191,7 @@ const links = [
           </ul>
         </section>
 
-                <section id="screenshots">
+        <section id="screenshots">
           <h2>Key Art</h2>
           <ul class="gallerykeyart">
             {
@@ -177,7 +211,6 @@ const links = [
             }
           </ul>
         </section>
-
 
         <section id="screenshots">
           <h2>Screenshots</h2>
@@ -211,9 +244,6 @@ const links = [
           </div>
         </section>
 
-
-
-
         <!-- <section id="faq">
           <h2>Press FAQ</h2>
           <details>
@@ -225,8 +255,6 @@ const links = [
             <p>[How to request]</p>
           </details>
         </section> -->
-
-
       </main>
 
       <footer>
@@ -258,7 +286,6 @@ const links = [
     width: min(30rem, 80%);
     height: auto;
     padding-top: 25px;
-
   }
 
   .press-content {
@@ -294,14 +321,13 @@ const links = [
     display: block;
   }
 
-    .gallerykeyart {
+  .gallerykeyart {
     list-style: none;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 1rem;
-        padding-bottom: 80px;
-
+    padding-bottom: 80px;
   }
   .gallerykeyart img {
     width: 100%;
@@ -310,170 +336,166 @@ const links = [
   }
 
   #factsheet {
-  display: grid;
-  grid-template-columns: .4fr 1fr 1fr;
-  column-gap: 1rem;
-  align-items: start;
-}
-
-#factsheet h2 {
-  grid-column: 1;
-  margin: 0;
-
-}
-
-#factsheet dl {
-  grid-column: 2 / 5;
-  display: grid;
-  grid-template-columns: .35fr 2fr;
-  gap: 0.5rem 0rem;
-  margin: 0;
-  padding-top: 10px;
-}
-
-#factsheet dd {
-  margin: 0;
-}
-
-@media (max-width: 40rem) {
-  #factsheet {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: start;
   }
-  #factsheet h2,
+
+  #factsheet h2 {
+    grid-column: 1;
+    margin: 0;
+  }
+
   #factsheet dl {
-    grid-column: 1;
+    grid-column: 2 / 5;
+    display: grid;
+    grid-template-columns: 0.35fr 2fr;
+    gap: 0.5rem 0rem;
+    margin: 0;
+    padding-top: 10px;
   }
-}
 
-#description {
-  display: grid;
-  grid-template-columns: .4fr 1fr 1fr;
-  column-gap: 1rem;
-  align-items: start;
-  padding-top: 50px;
-}
+  #factsheet dd {
+    margin: 0;
+  }
 
-#description h2 {
-  grid-column: 1;
-  margin: 0;
-}
+  @media (max-width: 40rem) {
+    #factsheet {
+      grid-template-columns: 1fr;
+    }
+    #factsheet h2,
+    #factsheet dl {
+      grid-column: 1;
+    }
+  }
 
-#description .body {
-  grid-column: 2 / 4;
-    padding-top: 6px;
-
-}
-
-#description .body > :first-child {
-  margin-top: 0;
-}
-
-@media (max-width: 40rem) {
   #description {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: start;
+    padding-top: 50px;
   }
-  #description h2,
+
+  #description h2 {
+    grid-column: 1;
+    margin: 0;
+  }
+
   #description .body {
-    grid-column: 1;
+    grid-column: 2 / 4;
+    padding-top: 6px;
   }
-}
 
-#assets {
-  display: grid;
-  grid-template-columns: .4fr 1fr 1fr;
-  column-gap: 1rem;
-  align-items: start;
-  padding-top: 40px;
-    padding-bottom: 40px;
+  #description .body > :first-child {
+    margin-top: 0;
+  }
 
-}
+  @media (max-width: 40rem) {
+    #description {
+      grid-template-columns: 1fr;
+    }
+    #description h2,
+    #description .body {
+      grid-column: 1;
+    }
+  }
 
-#assets h2 {
-  grid-column: 1;
-  margin: 0;
-}
-
-#assets ul {
-  grid-column: 2 / 4;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-      padding-top: 6px;
-
-}
-
-@media (max-width: 40rem) {
   #assets {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: start;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
-  #assets h2,
+
+  #assets h2 {
+    grid-column: 1;
+    margin: 0;
+  }
+
   #assets ul {
-    grid-column: 1;
+    grid-column: 2 / 4;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-top: 6px;
   }
-}
 
-#history {
-  display: grid;
-  grid-template-columns: .4fr 1fr 1fr;
-  column-gap: 1rem;
-  align-items: start;
-  padding-top: 40px;
-}
+  @media (max-width: 40rem) {
+    #assets {
+      grid-template-columns: 1fr;
+    }
+    #assets h2,
+    #assets ul {
+      grid-column: 1;
+    }
+  }
 
-#history h2 {
-  grid-column: 1;
-  margin: 0;
-}
-
-#history p {
-  grid-column: 2 / 4;
-  margin: 0;
-  padding-top: 6px;
-}
-
-@media (max-width: 40rem) {
   #history {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: start;
+    padding-top: 40px;
   }
-  #history h2,
+
+  #history h2 {
+    grid-column: 1;
+    margin: 0;
+  }
+
   #history p {
-    grid-column: 1;
+    grid-column: 2 / 4;
+    margin: 0;
+    padding-top: 6px;
   }
-}
 
-#contact {
-  display: grid;
-  grid-template-columns: .4fr 1fr 1fr;
-  column-gap: 1rem;
-  align-items: start;
-  padding-top: 40px;
-}
+  @media (max-width: 40rem) {
+    #history {
+      grid-template-columns: 1fr;
+    }
+    #history h2,
+    #history p {
+      grid-column: 1;
+    }
+  }
 
-#contact h2 {
-  grid-column: 1;
-  margin: 0;
-}
-
-#contact .body {
-  grid-column: 2 / 4;
-}
-
-#contact .body > :first-child {
-  margin-top: 0;
-}
-
-#contact ul {
-  list-style: none;
-  padding: 0;
-}
-
-@media (max-width: 40rem) {
   #contact {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: start;
+    padding-top: 40px;
   }
-  #contact h2,
-  #contact .body {
+
+  #contact h2 {
     grid-column: 1;
+    margin: 0;
   }
-}
+
+  #contact .body {
+    grid-column: 2 / 4;
+  }
+
+  #contact .body > :first-child {
+    margin-top: 0;
+  }
+
+  #contact ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  @media (max-width: 40rem) {
+    #contact {
+      grid-template-columns: 1fr;
+    }
+    #contact h2,
+    #contact .body {
+      grid-column: 1;
+    }
+  }
 </style>
